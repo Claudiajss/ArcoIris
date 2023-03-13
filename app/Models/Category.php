@@ -16,9 +16,12 @@ class Category extends Model
 
     ];
 
-    public function favorite(){
-        return $this->hasMany('App\Favorite');
+    public function getAllCategories(){
+        return Category::all();
+    }
 
+    public function getCategory($id){
+        return Category::find($id);
     }
 
         public function product(){

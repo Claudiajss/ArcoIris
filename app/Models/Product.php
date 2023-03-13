@@ -22,6 +22,15 @@ class Product extends Model
         'user_id',
     ];
 
+    public function getAllProducts(){
+        return Product::all();
+    }
+
+    public function getProduct($id){
+        return Product::find($id);
+    }
+
+
     public function category (){
         return $this->belongsTo('App\Category');
 
@@ -30,6 +39,14 @@ class Product extends Model
         public function user (){
             return $this->belongsTo('App\User');
         }
+
+        public function favorite(){
+            return $this->hasMany('App\Favorite');
+    
+        }
+
+
+
     
 
 

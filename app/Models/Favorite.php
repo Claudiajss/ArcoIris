@@ -11,7 +11,7 @@ class Favorite extends Model
 
     protected $fillable =[
         'user_id',
-        'category_id',
+        'product_id',
 
     ];
 
@@ -20,8 +20,10 @@ class Favorite extends Model
 
      }
 
-        public function category(){
-            return $this->belongsTo('App\Category');
+        public function product(){
+            return $this->belongsTo('App\Product');
         }
+
+        
 }
 
